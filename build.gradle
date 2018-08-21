@@ -81,7 +81,6 @@ dependencies {
 }
 
 test {
-    useTestNG() {
-        suiteXmlFiles << new File(rootDir, "testng.xml")
-    }
+    useTestNG()
 }
+

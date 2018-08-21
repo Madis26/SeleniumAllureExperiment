@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
 
 
 public class HomePageTest {
@@ -37,7 +38,7 @@ public class HomePageTest {
         driverManager.quitDriver();
     }
 
-
+    @Features("TESTNAME")
     @Test
     public void successfulLogoutTest() {
 

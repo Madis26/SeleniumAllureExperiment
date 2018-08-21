@@ -16,7 +16,7 @@ public class ChromeDriverManager extends DriverManager {
         if (null == chService) {
             try {
                 chService = new ChromeDriverService.Builder()
-                        .usingDriverExecutable(new File("src/test/resources/chromedriver"))
+                        .usingDriverExecutable(new File("src/test/resources/chromedriver.exe"))
                         .usingAnyFreePort()
                         .build();
                 chService.start();
@@ -34,7 +34,7 @@ public class ChromeDriverManager extends DriverManager {
 
     @Override
     public void createDriver() {
-        System.setProperty("webdriver.chrome.driver",  "src/test/resources/chromedriver" );
+        System.setProperty("webdriver.chrome.driver",  "src/test/resources/chromedriver.exe" );
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);

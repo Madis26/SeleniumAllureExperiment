@@ -20,7 +20,7 @@ public abstract class DriverManager {
 
     public org.openqa.selenium.chrome.ChromeDriver getDriver() {
         if (null == driver) {
-            startService();
+            //startService();
             createDriver();
         }
         return driver;
