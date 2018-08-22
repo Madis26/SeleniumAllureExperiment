@@ -36,7 +36,7 @@ public class ChromeDriverManager extends DriverManager {
     public void createDriver() {
         System.setProperty("webdriver.chrome.driver",  "src/test/resources/chromedriver" );
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
