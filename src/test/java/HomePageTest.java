@@ -48,8 +48,6 @@ public class HomePageTest {
     @Features("Features")
     @Description("Here you can write testcase description")
     @TestCaseId("TEST-1")
-    @Issue("Jira task number")
-    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void CheckGmailUrlName() {
         homePage.gmailUrl();

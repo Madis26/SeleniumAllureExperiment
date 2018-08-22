@@ -12,6 +12,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     testCompile(
             'org.testng:testng:6.8.21',
@@ -23,7 +24,6 @@ dependencies {
     agent 'org.aspectj:aspectjweaver:1.8.8'
 
 }
-
 
 test {
     useTestNG()
