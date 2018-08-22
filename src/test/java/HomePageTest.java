@@ -56,4 +56,17 @@ public class HomePageTest {
         Assert.assertEquals(assertGetGmailButtonExists, "KONTO LOOMINE");
 
     }
+
+    @Title("TestCase Title2")
+    @Features("Features2")
+    @Description("Here you can write testcase description2")
+    @TestCaseId("TEST-2")
+    @Test
+    public void CheckGmailUrlNameFail() {
+        homePage.gmailUrl();
+        driver.manage().window().maximize();
+        String assertGetGmailButtonExists = driver.findElement(By.xpath("/html/body/main/section/div[2]/div[2]/a[1]")).getText();
+        Assert.assertEquals(assertGetGmailButtonExists, "KONTO LOOMINES");
+
+    }
 }
