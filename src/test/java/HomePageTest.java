@@ -40,8 +40,7 @@ public class HomePageTest {
 
     @Features("TESTNAME")
     @Test
-    public void successfulLogoutTest() {
-
+    public void CheckGmailUrlName() {
         String assertLogOut = driver.findElement(By.xpath("//*[@id=\"gbw\"]/div/div/div[1]/div[1]/a")).getText();
         Assert.assertEquals(assertLogOut, "Gmail");
 
