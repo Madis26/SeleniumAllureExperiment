@@ -53,6 +53,7 @@ public class HomePageTest {
     @Test
     public void CheckGmailUrlName() {
         homePage.gmailUrl();
+        driver.manage().window().maximize();
         String assertGetGmailButtonExists = driver.findElement(By.xpath("/html/body/main/section/div[2]/div[2]/a[1]")).getText();
         Assert.assertEquals(assertGetGmailButtonExists, "KONTO LOOMINE");
 
