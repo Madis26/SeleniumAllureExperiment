@@ -8,9 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage{
     private ChromeDriver webDriver;
-    @FindBy(className = "gsfi")
+    @FindBy(className = "gb_P")
     @CacheLookup
-    private WebElement loggingOut;
+    private WebElement gmailUrl;
+
 
     public HomePage() {
         PageFactory.initElements(this.webDriver, this);
@@ -18,8 +19,8 @@ public class HomePage{
 
 
     //Methods
-    public HomePage logout(){
-        loggingOut.click();
+    public HomePage gmailUrl(){
+        gmailUrl.click();
         return this;
     }
 }

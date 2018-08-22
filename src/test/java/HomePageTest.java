@@ -1,5 +1,6 @@
 
 
+import com.gargoylesoftware.htmlunit.Page;
 import com.mk.ee.Page.HomePage;
 
 
@@ -11,11 +12,14 @@ import com.mk.ee.Webdriver.DriverType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.*;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 
 
 public class HomePageTest {
@@ -31,18 +35,26 @@ public class HomePageTest {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         driver = driverManager.getDriver();
         driver.navigate().to(applicationUrl);
+        homePage = PageFactory.initElements(driver, HomePage.class);
     }
 
     @AfterClass
     public void afterMethod() {
+
         driverManager.quitDriver();
     }
 
-    @Features("TESTNAME")
+    @Title("TestCase Title")
+    @Features("Features")
+    @Description("Here you can write testcase description")
+    @TestCaseId("TEST-1")
+    @Issue("Jira task number")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void CheckGmailUrlName() {
-        String assertLogOut = driver.findElement(By.xpath("//*[@id=\"gbw\"]/div/div/div[1]/div[1]/a")).getText();
-        Assert.assertEquals(assertLogOut, "Gmail");
+        homePage.gmailUrl();
+        String assertGetGmailButtonExists = driver.findElement(By.xpath("/html/body/main/section/div[2]/div[2]/a[1]")).getText();
+        Assert.assertEquals(assertGetGmailButtonExists, "KONTO LOOMINE");
 
     }
 }
